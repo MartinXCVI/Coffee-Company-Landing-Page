@@ -11,6 +11,8 @@
     --HeaderBrown: #242320;
     --TextBlack: #1B1212;
     --TextWhite: #F8F8FF;
+    --LightBrown: hsla(28, 30%, 35%);
+    --BlackishBrown: rgba(36, 35, 32, 0.860);
 }
 
 /*----------------------------------------------------*/
@@ -29,6 +31,7 @@ body {
     background-color: #edeced;
     font-family: 'Open Sans', sans-serif;
     color: var(--TextBlack);
+    font-size: 0.9em;
 }
 
 ul {
@@ -51,6 +54,12 @@ a {
         font-family: 'Roboto Slab', serif;
     }
 
+    #Index-Principal {
+        display: flex; flex-direction: column; justify-content: center; align-items: center;
+    }
+
+    /*------HEADER------*/
+
     #Header {
         width: 100%;
         display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -66,12 +75,20 @@ a {
         display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;
     }
 
+    .nav-accessibility ul li {
+        padding: 1em;
+    }
+
     .nav-bar {
         width: 100%;
     }
 
     .nav-bar ul {
         display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;
+    }
+
+    .nav-bar ul li {
+        padding: 1em;
     }
 
     .logo-figure {
@@ -83,13 +100,20 @@ a {
         width: 50%;
     }
 
+    /*------------------*/
+
+    /*-----------INDEX <main>-----------*/
+
+    /*---Intro Section---*/
+
     #Intro-Section {
         margin-bottom: 1.5em;
+        display: flex; flex-direction: column; justify-content: center; align-items: center;
     }
 
     #Intro-Title {
         margin-bottom: 0.5em;
-        margin-left: 1em;
+        width: 95%;
     }
 
     .intro-article {
@@ -99,13 +123,15 @@ a {
     }
 
     .intro-article-figure {
-        width: 95%;
+        width: 90%;
     }
 
     .intro-article-figure img {
         width: 100%;
     }
+    /*--------------------*/
 
+    /*----Info Section----*/
     #Info-Section {
         width: 100%;
         display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -119,13 +145,86 @@ a {
     }
 
     #Info-Section-Figure {
-        width: 95%;
+        width: 90%;
     }
 
     #Info-Section-Figure img {
         width: 100%;
     }
+    /*--------------------*/
 
+    /*--Featured Products Section--*/
+
+    #Featured-Products-Section {
+        width: 100%;
+        display: flex; flex-direction: column; justify-content: center; align-items: center;
+    }
+
+    #Featured-Products-Section h2 {
+        margin-bottom: 0.8em;
+    }
+
+    h3 {
+        margin-bottom: 0.5em;
+        font-size: 1.1em;
+    }
+
+    h4 {
+        margin-bottom: 0.5em;
+        font-size: 1.5em;
+    }
+
+    #Featured-Grains {
+        width: 95%;
+        display: flex; flex-direction: column; justify-content: center; align-items: center;
+    }
+
+    .arabica-div, .liberica-div {
+        width: 95%;
+        display: flex; flex-direction: column; justify-content: center; align-items: center;
+        margin-bottom: 1em;
+        padding-bottom: 0.5em;
+        background-color: lightgray;
+        border-radius: 0.5em;
+        border: 1px solid var(--HeaderBrown);
+        overflow: hidden;
+    }
+
+    .arabica-div p, .liberica-div p {
+        width: 95%;
+    }
+
+    .arabica-div, .liberica-div {
+        position: relative;
+    }
+
+    .arabica-div h4, .liberica-div h4 {
+        position: absolute;
+        color: var(--TextWhite);
+        font-weight: 700;
+        z-index: 100;
+    }
+
+    .arabica-div h4 {
+        top: 20%;
+        left: 5%;
+    }
+
+    .liberica-div h4 {
+        top: 25%;
+        right: 12%;
+    }
+
+    .arabica-fig, .liberica-fig {
+        width: 100%;
+    }
+
+    .arabica-fig img, .liberica-fig img {
+        width: 100%;
+    }
+    /*-----------------------------*/
+
+    /*--------------FOOTER---------------*/
 
     .foot {
         width: 100%;
@@ -137,6 +236,225 @@ a {
 
     .foot p {
         color: white;
+    }
+
+}
+/*-------------------END: 320px---------------------*/
+
+/*----------------------480px-----------------------*/
+
+@media all and (min-width: 480px) {
+
+    .logo-figure img {
+        width: 35%;
+    }
+
+    .arabica-div h4 {
+        top: 30%;
+        left: 5%;
+    }
+
+    .liberica-div h4 {
+        top: 30%;
+        right: 20%;
+    }
+
+}
+
+/*-------------------END: 480px---------------------*/
+
+/*----------------------576px-----------------------*/
+
+@media all and (min-width: 576px) {
+
+    .logo-figure img {
+        width: 30%;
+    }
+
+    #Intro-Title, #Info-Section-Article, #Featured-Grains {
+        width: 90%;
+    }
+
+    .arabica-div, .liberica-div {
+        width: 75%;
+        margin-bottom: 2em;
+    }
+
+    .arabica-div h4 {
+        top: 32%;
+        left: 7%;
+    }
+
+    .liberica-div h4 {
+        top: 32%;
+        right: 18%;
+    }
+
+}
+
+/*-------------------END: 576px---------------------*/
+
+/*----------------------768px-----------------------*/
+
+@media all and (min-width: 768px) {
+
+    .arabica-div, .liberica-div {
+        width: 60%;
+        overflow: inherit;
+    }
+
+    .arabica-div h4 {
+        top: 35%;
+        left: 7%;
+    }
+
+    .liberica-div h4 {
+        top: 35%;
+        right: 18%;
+    }
+
+}
+
+/*-------------------END: 768px---------------------*/
+
+/*----------------------1024px----------------------*/
+
+@media all and (min-width: 1024px) {
+
+    .nav-accessibility ul {
+        display: flex; flex-direction: row; justify-content: flex-start; align-items: center;
+        margin-left: 2em;
+    }
+
+    .nav-bar ul {
+        display: flex; flex-direction: row; justify-content: flex-end; align-items: center;
+    }
+
+    .nav-bar ul li {
+        padding-right: 1.5em;
+        padding-left: 1.5em;
+    }
+
+    .logo-figure img {
+        width: 20%;
+    }
+
+    #Index-Principal {
+        padding-top: 2em;
+        padding-bottom: 2em;
+
+    }
+    /*----Intro Section----*/
+    #Intro-Section {
+        width: 90%;
+        flex-direction: row; justify-content: space-between; align-items: center;
+        background-color: var(--BlackishBrown);
+        padding: 2em;
+        color: var(--TextWhite);
+    }
+
+    .intro-article {
+        width: 80%;
+    }
+
+    .intro-article-figure {
+        width: 95%;
+    }
+
+
+    .h1-title {
+        font-size: 3.7em;
+        margin-bottom: 1.5em;
+    }
+
+    .slogan {
+        text-align: right;
+        margin-right: 1em;
+        font-size: 1.5em !important;
+    }
+
+    #Intro-Title p {
+        font-size: 1.2em;
+    }
+
+    .h2-subtitle {
+        font-size: 2em;
+    }
+
+    .paragraph {
+        font-size: 1.1em;
+    }
+    /*---------------------*/
+
+    /*----Info Section----*/
+
+    #Info-Section {
+        width: 90%;
+        flex-direction: row; justify-content: space-between; align-items: center;
+        flex-flow: row-reverse;
+        background-color: var(--BlackishBrown);
+        padding: 2em;
+        color: var(--TextWhite);
+        text-align: justify;
+    }
+
+    #Info-Section-Article, #Info-Section-Figure {
+        width: 49% !important;
+    }
+
+    /*--------------------*/
+
+    #Featured-Grains {
+        background-color: var(--BlackishBrown);
+        margin-bottom: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    #Featured-Grains h3 {
+        color: var(--TextWhite);
+    }
+
+    .arabica-div, .liberica-div {
+        width: 90%;
+        flex-direction: row; justify-content: space-between;
+        padding: 1.5em;
+        border: 0px;
+    }
+
+    .liberica-div {
+        flex-flow: row-reverse;
+    }
+
+    .arabica-fig, .liberica-fig {
+        width: 40%;
+        min-width: 40%;
+        aspect-ratio: 1/ 1;
+        object-fit: cover;
+    }
+
+    .arabica-fig img, .liberica-fig img {
+        height: 100%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border-radius: 100%;
+    }
+
+    .arabica-div p, .liberica-div p {
+        width: 55%;
+        font-size: 1.3em;
+        line-height: 1.5em;
+        letter-spacing: 0.05em;
+    }
+
+    .arabica-div h4 {
+        top: 45%;
+        left: 7%;
+    }
+
+    .liberica-div h4 {
+        top: 45%;
+        right: 8%;
     }
 
 }
